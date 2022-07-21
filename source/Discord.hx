@@ -109,5 +109,4 @@ class DiscordClient
 		});
 	}
 	#end
-		
 }
