@@ -110,6 +110,11 @@ class ControlsSubState extends MusicBeatSubstate {
 			}
 		}
 		changeSelection();
+		
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		addPadCamera();
+		#end
 	}
 
 	var leaving:Bool = false;
@@ -131,7 +136,12 @@ class ControlsSubState extends MusicBeatSubstate {
 				close();
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 			}
-
+                        #if android
+                        flixel.addons.transition.FlxTransitionableState.skipNextTransOut = true;
+			FlxG.resetState();
+                        #else
+                        close();
+                        #end
 			if(controls.ACCEPT && nextAccept <= 0) {
 				if(optionShit[curSelected][0] == defaultKey) {
 					ClientPrefs.keyBinds = ClientPrefs.defaultKeys.copy();
