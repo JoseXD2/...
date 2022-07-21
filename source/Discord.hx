@@ -1,6 +1,6 @@
 package;
 
-#if desktop 
+
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
 
@@ -109,5 +109,5 @@ class DiscordClient
 		});
 	}
 	#end
-	#end	
+		
 }
