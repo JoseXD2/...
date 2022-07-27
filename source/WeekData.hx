@@ -209,7 +209,7 @@ class WeekData {
 
 	private static function getWeekFile(path:String):WeekFile {
 		var rawJson:String = null;
-		#if MODS_ALLOWED
+		#if windows
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
